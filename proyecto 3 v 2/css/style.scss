@@ -1,0 +1,98 @@
+@import "../scss/reset.scss";
+
+/*Variable SASS para color del menu hover*/
+$menu: lightblue;
+$opaco: black;
+
+/*mixin*/
+@mixin img-center{
+    justify-items: center;
+    align-items: center;
+}
+
+p{
+    text-align: center;
+    text-justify: auto;
+    padding: 5%;
+}
+
+p:hover {
+    text-shadow: 0.5px 0.5px gray;
+}
+
+/*espaciado de div para mejor visualizacion*/
+div {
+    padding: 10px;
+    a {
+            display: inline-block;
+            padding: 05px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        footer{
+            text-align: center;
+            text-justify:center;
+        }
+        .img_prin {
+            @include img-center;
+        }
+    }
+
+
+/*Cambio de color al pasar el mouse*/
+a:hover {
+    font-weight: bold;
+    padding: 1vh;
+    background-color: $menu;
+    color: $opaco;
+}
+
+.grid-pad {
+display: grid;
+grid-template-rows: 30vh 30vh 30vh;
+grid-template-areas: "seccion seccion seccion";
+margin-bottom: 0.5%;
+}
+
+.grid-item {
+    grid-area: seccion;
+    width: 30%;
+    height: 30%;
+}
+
+
+@media screen and (max-width: 768px) {
+    .grid-pad{
+    display: grid;
+    row-gap: 3px;
+    grid-template-columns: 3fr;
+    grid-template-rows: 30% 30% 30%;
+    grid-template-areas: 
+    "seccion"
+    "seccion"
+    "seccion";
+    }
+    .figure {
+        align-items: center;
+        justify-items: center;
+    }
+    .card{
+        width: 30vw;
+    } 
+    }
+
+.button, button--enviar{
+    color: gray
+    
+}
+
+
+/*Extend para boton*/
+button--enviar{
+@extend button--enviar;
+color: lightgray;
+}
+
+.pie  {
+    font: red;
+}
+
